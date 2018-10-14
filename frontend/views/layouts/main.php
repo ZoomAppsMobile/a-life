@@ -48,7 +48,7 @@ $banner=Banner::find()
 <!--                </button>-->
                 <a class="pink-text" data-toggle="modal" data-target="#exampleModal">
                     <span>
-                        <?=Yii::t('main-title', 'Заказать звонок1');?>
+                        <?=Yii::t('main-title', 'Заказать звонок');?>
                     </span>
                 </a>
             </div>
