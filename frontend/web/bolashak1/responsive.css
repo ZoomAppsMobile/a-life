@@ -1,0 +1,89 @@
+@media (max-width: 1408px){
+  #name-control{
+    width: 450px;
+  }
+
+  #tel-control{
+    width: 230px;
+  }
+
+  #email-control{
+    width: 310px;
+  }
+}
+@media (max-width: 1236px){
+  #name-control{
+    width: 420px;
+  }
+
+  #tel-control{
+    width: 200px;
+  }
+
+  #email-control{
+    width: 280px;
+  }
+}
+@media (max-width: 1136px){
+  #name-control{
+    width: 390px;
+  }
+
+  #tel-control{
+    width: 180px;
+  }
+
+  #email-control{
+    width: 260px;
+  }
+}
+@media (max-width: 1060px){
+  #first-row{
+    flex-direction: column !important;
+  }
+  #first-row>div{
+    flex-direction: column !important;
+    margin: 1rem 0;
+  }
+  #name-control, #tel-control, #email-control{
+    width: 100%;
+  }
+  .third-row>div{
+    margin: 1rem 0;
+  }
+  .select-block{
+    margin-left: 0;
+    margin-top: 1rem 0;
+  }
+  .dynamic2{
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 768px){
+  .dop-text2{
+    width: 100%;
+  }
+  .gender-block{
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+  .dynamic-sum{
+    width: 100px;
+  }
+  .dynamic3{
+    width: 100%;
+  }
+  .sum-btn{
+    margin-top: -3rem;
+    width: 100%;
+  }
+}
+@media (max-width: 386px){
+  #select1{
+    width: 100%;
+  }
+  #select2{
+    width: 100%;
+  }
+}

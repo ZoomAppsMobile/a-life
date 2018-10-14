@@ -1,0 +1,196 @@
+git add .
+git commit -m "Название коммита"
+git pull origin master - забрать с гита изменения
+git push origin master - закинуть изменения
+
+Первоначальные настройки Git.
+git config --global user.name "Yuriy"
+git config --global user.email "yvmanzhela@mail.ru"
+
+Настройки переноса строк.
+git config --global core.autocrlf input #Linux/Mac
+git config --global core.autocrlf true #Windows
+git config --global core.safecrlf true
+
+Интерфейс.
+git config --global color.ui true
+еще
+git config --global core.editor nano #vim для Windows
+
+Создание репозитория.
+git init
+git init project
+
+filemode = false
+
+Команды.
+git status
+
+Добаление в индекс:
+git add название файла, может и папки
+git add -A - все
+git add . - все в текущей папке
+git add *.txt все файлы с txt расширением
+
+Удаление из индекса:
+git rm --cached название файла
+
+git commit -m "название коммита"
+Если файл не новый, а уже существующий.
+git commit -a -m "Change test.txt"
+git commit --amend -m 'Fixed string' - меняет(дополняет) последний коммит - удаляет последний, заменяет(дополняет) этим
+
+git log - вывод всех коммитов
+git log --oneline - краткий вывод коммитов
+git log --oneline --graph - вывод в графичском режиме
+
+Переключение веток.
+git checkout - название коммита(можно посмотреть через -git log --oneline)
+git checkout master - переключиться на последний коммит
+
+Запись в файл.
+echo 'My cool demo project' > test.txt
+
+Просмотр различий.
+git diff
+git diff 03ad847 cdf5904
+
+Создание файла.
+touch text.txt
+
+Показывает все ветки.
+git branch
+git branch feature - создание ветки feature
+git checkout feature - переключение ветки на feature
+git checkout -b var1 - создание ветки var1 и переключение на нее
+git checkout HEAD~1 - переключение на последний коммит
+
+Объединение веток.
+git merge feature - master с feature
+git branch -d feature - удаление ветки
+
+После решения конфликтов.
+git add .
+git commit
+
+Нажать esc и ввести :wq и нажать Enter - выход из редактора.
+
+Отмена добавления 
+git reset - отмена поледнего git add .
+git reset --hard HEAD~1 - отмена последнего коммита, git reset --hard HEAD~2 - двух последних
+git reset --hard HEAD~git reset --hard HEAD~
+
+Прокидывает текущую ветку в ветку master.
+git rebase master
+
+Далее переходим на ветку master и делаем git merge feature
+
+git mv text.txt content.txt - переименовывает файл и сразу добавляет в индекс
+git rm content.txt - удаляет файл и сразу добавляет в индекс
+
+
+.gitignore
+!.gitkeep - все эти файлы разрешены, попадают в индекс
+
+git init --bare main - создание главного репозитория в папке main
+git init repo1 - создание рабочего репозитория
+
+Подключение основного репозитория к своему.
+git remote add origin ../main
+git remote (remote - удаленный, находящий на удалении)
+
+Вывод всех текущих параметров.
+git config --local --list - файл config
+
+git push -u origin master - закидываем в основной репозиторий, первое закидывание
+
+cat .git/config - просмотр файла
+
+git clone main repo2 - клонирование репозитория
+
+git push origin master
+
+git pull origin master - скачать обновления сделанные другим программистом
+
+git fetch origin - загрузить к себе (вроде как для сверки что сейчас на мастере c тем что сейчас находится у нас(origin))
+
+git log --oneline origin/master - просмотр коммитов что находятся в main(центральный) репозитории
+
+git merge origin/master
+
+git pull --rebase origin master
+
+origin - репозиторий
+master - ветка
+
+Создание публичного и приватного ключей.(ssh ключи)
+ls ~/.ssh - проверка имеющихся ключей на компьютере
+id_rsa - приватный ключ
+id_rsa.pub - публичный ключ
+ssh-keygen -t rsa -C 'yvmanzhela@mail.ru' - генерация ключей
+git clone git@github.com:ElisDN/git-demo.git - клонирование репозитория
+
+git tag v1.0 - Помечаем последний коммит меткой v1.0.
+git tag - просмотр меток
+
+Отдаем, забираем все метки.
+git push origin master --tags
+git pull origin master --tags
+
+git stash - прятание в карман(заначку)
+git stash list - просмотр карманов
+git stash apply - опять изменяет файлы и показывает как git status что измененно в последнем кармане
+git stash drop - удаляет полседний карман
+
+git add -i - добавление в индекс в интерактивном режиме
+5.patch - позволяет вносить изменения выборочно 
+
+git merge feature --no-ff - без перемотки(с отклонениями), показывает в git log --oneline --graph - поле ее удаления, что была ветка 
+git diff v1.0 v1.1 -просмотр различий, которые произошли, между метками
+
+git show v1.1 - просмотр информации по метке
+
+
+git bisect start - старт поиска ошибкив коммитах
+git bisect bad - говорим что последний коммит плохой
+git bisect good v1 - хороший коммит
+git bisect reset - после нахождения проблемного коммита, эта команда возвращает коммиты в исходное состояние
+
+git rebase -i HEAD~3 - запуск в интерактивном режиме
+git commit --amend -m 'Changed green to black' - режим edit
+git rebase --continue
+
+git rebase --abort - отмена rebase
+ 
+git filter-branch --tree-filter 'rm -f confiq.txt' HEAD - удаление из всех коммитов, удаление файла.
+
+Изменение конфигурации
+git push origin master --force
+git push origin master -f
+
+
+Подключение github репозитория.
+git remote add origin git@github.com:myv111/test.git - свой или fork репозиторий
+git remote add upstream git@github.com:myv111/test.git - главный репозиторий
+git push -u origin master
+
+git pull upstream master - скачивание с fork репозитория на локальный компьютер
+git push origin master - закидываем в свой репозиторий на github с локального компьютера
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

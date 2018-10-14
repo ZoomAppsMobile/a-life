@@ -1,0 +1,19 @@
+$('.add_options').click(function(e){
+    e.preventDefault();
+    $('.copyMe').clone().appendTo('.copyTo').attr('class','copyMe_open').show();
+});
+$('.add_options1').click(function(e){
+    e.preventDefault();
+    $('.copyMe_1').clone().appendTo('.copyTo_1').attr('class','copyMe_open_1').show();
+});
+$('.add_options2').click(function(e){
+    e.preventDefault();
+    $('.copyMe_2').clone().appendTo('.copyTo_2').attr('class','copyMe_open_2').show();
+});
+$('.add_options3').click(function(e){
+    e.preventDefault();
+    $('.copyMe_3').clone().appendTo('.copyTo_3').attr('class','copyMe_open_3').show();
+});
+function remove(obj) {
+    $(obj).parent('div').remove();
+}

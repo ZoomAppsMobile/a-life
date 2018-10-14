@@ -1,0 +1,294 @@
+[33mcommit eaad3e26548a770a3229b40d5a02acbd33df0eb5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Yuriy <yvmanzhela@mail.ru>
+Date:   Wed Aug 8 09:24:32 2018 +0600
+
+    1
+
+[1mdiff --git a/backend/controllers/BlogtagController.php b/backend/controllers/BlogtagController.php[m
+[1mindex 39d9827..0789291 100644[m
+[1m--- a/backend/controllers/BlogtagController.php[m
+[1m+++ b/backend/controllers/BlogtagController.php[m
+[36m@@ -5,6 +5,7 @@[m [mnamespace backend\controllers;[m
+ use Yii;[m
+ use backend\models\Blogtag;[m
+ use backend\models\BlogtagSearch;[m
+[32m+[m[32muse yii\helpers\ArrayHelper;[m
+ use yii\web\Controller;[m
+ use yii\web\NotFoundHttpException;[m
+ use yii\filters\VerbFilter;[m
+[1mdiff --git a/backend/controllers/InsuranceCaseController.php b/backend/controllers/InsuranceCaseController.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..797f5e7[m
+[1m--- /dev/null[m
+[1m+++ b/backend/controllers/InsuranceCaseController.php[m
+[36m@@ -0,0 +1,127 @@[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32mnamespace backend\controllers;[m
+[32m+[m
+[32m+[m[32muse Yii;[m
+[32m+[m[32muse common\models\InsuranceCase;[m
+[32m+[m[32muse backend\models\search\InsuranceCaseSearch;[m
+[32m+[m[32muse yii\web\Controller;[m
+[32m+[m[32muse yii\web\NotFoundHttpException;[m
+[32m+[m[32muse yii\filters\VerbFilter;[m
+[32m+[m
+[32m+[m[32m/**[m
+[32m+[m[32m * InsuranceCaseController implements the CRUD actions for InsuranceCase model.[m
+[32m+[m[32m */[m
+[32m+[m[32mclass InsuranceCaseController extends Controller[m
+[32m+[m[32m{[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * {@inheritdoc}[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function behaviors()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        return [[m
+[32m+[m[32m            'verbs' => [[m
+[32m+[m[32m                'class' => VerbFilter::className(),[m
+[32m+[m[32m                'actions' => [[m
+[32m+[m[32m                    'delete' => ['POST'],[m
+[32m+[m[32m                ],[m
+[32m+[m[32m            ],[m
+[32m+[m[32m        ];[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Lists all InsuranceCase models.[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionIndex()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $searchModel = new InsuranceCaseSearch();[m
+[32m+[m[32m        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);[m
+[32m+[m
+[32m+[m[32m        return $this->render('index', [[m
+[32m+[m[32m            'searchModel' => $searchModel,[m
+[32m+[m[32m            'dataProvider' => $dataProvider,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Displays a single InsuranceCase model.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionView($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        return $this->render('view', [[m
+[32m+[m[32m            'model' => $this->findModel($id),[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Creates a new InsuranceCase model.[m
+[32m+[m[32m     * If creation is successful, the browser will be redirected to the 'view' page.[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionCreate()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $model = new InsuranceCase();[m
+[32m+[m
+[32m+[m[32m        if ($model->load(Yii::$app->request->post()) && $model->save()) {[m
+[32m+[m[32m            return $this->redirect(['view', 'id' => $model->id]);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return $this->render('create', [[m
+[32m+[m[32m            'model' => $model,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Updates an existing InsuranceCase model.[m
+[32m+[m[32m     * If update is successful, the browser will be redirected to the 'view' page.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionUpdate($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $model = $this->findModel($id);[m
+[32m+[m
+[32m+[m[32m        if ($model->load(Yii::$app->request->post()) && $model->save()) {[m
+[32m+[m[32m            return $this->redirect(['view', 'id' => $model->id]);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return $this->render('update', [[m
+[32m+[m[32m            'model' => $model,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Deletes an existing InsuranceCase model.[m
+[32m+[m[32m     * If deletion is successful, the browser will be redirected to the 'index' page.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionDelete($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $this->findModel($id)->delete();[m
+[32m+[m
+[32m+[m[32m        return $this->redirect(['index']);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Finds the InsuranceCase model based on its primary key value.[m
+[32m+[m[32m     * If the model is not found, a 404 HTTP exception will be thrown.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return InsuranceCase the loaded model[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    protected function findModel($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        if (($model = InsuranceCase::findOne($id)) !== null) {[m
+[32m+[m[32m            return $model;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        throw new NotFoundHttpException('The requested page does not exist.');[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/backend/controllers/ReviewsController.php b/backend/controllers/ReviewsController.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..97056b6[m
+[1m--- /dev/null[m
+[1m+++ b/backend/controllers/ReviewsController.php[m
+[36m@@ -0,0 +1,127 @@[m
+[32m+[m[32m<?php[m
+[32m+[m
+[32m+[m[32mnamespace backend\controllers;[m
+[32m+[m
+[32m+[m[32muse Yii;[m
+[32m+[m[32muse common\models\Reviews;[m
+[32m+[m[32muse backend\models\search\ReviewsSearch;[m
+[32m+[m[32muse yii\web\Controller;[m
+[32m+[m[32muse yii\web\NotFoundHttpException;[m
+[32m+[m[32muse yii\filters\VerbFilter;[m
+[32m+[m
+[32m+[m[32m/**[m
+[32m+[m[32m * ReviewsController implements the CRUD actions for Reviews model.[m
+[32m+[m[32m */[m
+[32m+[m[32mclass ReviewsController extends Controller[m
+[32m+[m[32m{[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * {@inheritdoc}[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function behaviors()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        return [[m
+[32m+[m[32m            'verbs' => [[m
+[32m+[m[32m                'class' => VerbFilter::className(),[m
+[32m+[m[32m                'actions' => [[m
+[32m+[m[32m                    'delete' => ['POST'],[m
+[32m+[m[32m                ],[m
+[32m+[m[32m            ],[m
+[32m+[m[32m        ];[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Lists all Reviews models.[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionIndex()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $searchModel = new ReviewsSearch();[m
+[32m+[m[32m        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);[m
+[32m+[m
+[32m+[m[32m        return $this->render('index', [[m
+[32m+[m[32m            'searchModel' => $searchModel,[m
+[32m+[m[32m            'dataProvider' => $dataProvider,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Displays a single Reviews model.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionView($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        return $this->render('view', [[m
+[32m+[m[32m            'model' => $this->findModel($id),[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Creates a new Reviews model.[m
+[32m+[m[32m     * If creation is successful, the browser will be redirected to the 'view' page.[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionCreate()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $model = new Reviews();[m
+[32m+[m
+[32m+[m[32m        if ($model->load(Yii::$app->request->post()) && $model->save()) {[m
+[32m+[m[32m            return $this->redirect(['view', 'id' => $model->id]);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return $this->render('create', [[m
+[32m+[m[32m            'model' => $model,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Updates an existing Reviews model.[m
+[32m+[m[32m     * If update is successful, the browser will be redirected to the 'view' page.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionUpdate($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $model = $this->findModel($id);[m
+[32m+[m
+[32m+[m[32m        if ($model->load(Yii::$app->request->post()) && $model->save()) {[m
+[32m+[m[32m            return $this->redirect(['view', 'id' => $model->id]);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return $this->render('update', [[m
+[32m+[m[32m            'model' => $model,[m
+[32m+[m[32m        ]);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Deletes an existing Reviews model.[m
+[32m+[m[32m     * If deletion is successful, the browser will be redirected to the 'index' page.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return mixed[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public function actionDelete($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        $this->findModel($id)->delete();[m
+[32m+[m
+[32m+[m[32m        return $this->redirect(['index']);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * Finds the Reviews model based on its primary key value.[m
+[32m+[m[32m     * If the model is not found, a 404 HTTP exception will be thrown.[m
+[32m+[m[32m     * @param integer $id[m
+[32m+[m[32m     * @return Reviews the loaded model[m
+[32m+[m[32m     * @throws NotFoundHttpException if the model cannot be found[m
+[32m+[m[32m     */[m
+[32m+[m[32m    protected function findModel($id)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        if (($model = Reviews::findOne($id)) !== null) {[m
+[32m+[m[32m            return $model;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        throw new NotFoundHttpException('The requested page does not exist.');[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[1mdiff --git a/backend/models/Blog.php b/backend/models/Blog.php[m
+[1mindex dd41119..e7a7009 100644[m
+[1m--- a/backend/models/Blog.php[m
+[1m+++ b/backend/models/Blog.php[m
+[36m@@ -2,6 +2,8 @@[m
+ [m
+ namespace backend\models;[m
+ [m
+[32m+[m[32muse common\models\AdditionalProtectionInsurer;[m
+[3

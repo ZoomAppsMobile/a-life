@@ -1,0 +1,8 @@
+[17-Feb-2016 23:10:13 America/Chicago] PHP Parse error:  syntax error, unexpected 'baiwayeducation' (T_STRING) in /home/galamatb/public_html/baiway/frontend/controllers/SiteController.php on line 127
+[17-Feb-2016 23:10:52 America/Chicago] PHP Parse error:  syntax error, unexpected 'baiwayeducation' (T_STRING) in /home/galamatb/public_html/baiway/frontend/controllers/SiteController.php on line 127
+[18-Feb-2016 03:15:24 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 8
+[18-Feb-2016 03:15:32 America/Chicago] PHP Parse error:  syntax error, unexpected '{' in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 8
+[18-Feb-2016 03:23:06 America/Chicago] PHP Fatal error:  Class 'Html' not found in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 155
+[18-Feb-2016 03:23:13 America/Chicago] PHP Fatal error:  Class 'Html' not found in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 155
+[18-Feb-2016 03:23:19 America/Chicago] PHP Fatal error:  Class 'Html' not found in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 155
+[18-Feb-2016 03:23:38 America/Chicago] PHP Fatal error:  Class 'Html' not found in /home/galamatb/public_html/baiway-education.kz/frontend/views/site/univercity.php on line 155

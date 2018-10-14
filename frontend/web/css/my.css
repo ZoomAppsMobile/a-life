@@ -1,0 +1,53 @@
+.tab-pane input[type=password] {
+    width: 39rem;
+    padding: 1rem;
+    color: #474747;
+    font-size: 1.2rem;
+    margin: 1.2rem;
+    outline: none;
+    border: 2px solid #d9dde1; }
+@media (max-width: 768px) {
+    .tab-pane input[type=password] {
+        width: 90%; } }
+#exTab1 .tab-content .help-block.help-block-error{
+    color: red;
+}
+/*.private-customers-wrap img{*/
+    /*height:27%;*/
+/*}*/
+.response{
+    display: none;
+}
+a .finance-item2, a img{
+    cursor:pointer;
+}
+.help-block{
+    color:red;
+}
+.mechanism .item img{
+    margin-top:-15px;
+}
+.edit-form .center_button_form, .password-form .center_button_form{
+    text-align: right;
+    margin:-30px 16px 20px 0;
+}
+.edit-form .center_button_form button, .password-form .center_button_form button{
+    background: #9f074f;
+    border: none;
+}
+.message{
+    text-align: center;
+    margin-top:10px;
+    margin-bottom:-20px;
+}
+.form .message{
+    margin-bottom:0;
+}
+.news-block1 img{
+    max-width: 200px;
+}
+.absolute-logo{
+	position: absolute !important;
+	z-index: 9999 !important;
+	bottom: 0 !important;
+}
