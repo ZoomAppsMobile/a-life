@@ -49,13 +49,13 @@ use yii\widgets\ActiveForm;
                         <option value="1" <?if($model->rprogMaxDays == 1&&$model->rprogSrok) echo 'selected'?>>30</option>
                         <option value="2" <?if($model->rprogMaxDays == 2&&$model->rprogSrok) echo 'selected'?>>60</option>
                     </select>
-                    <select name="Step2polis[rprogMaxDays]" <?if(!$model->rprogSrok) echo 'disabled';elseif($model->rprogSrok!=2) echo 'style="display:none;"'?> id="input3" class="rprogMaxDays2 form-control" >
+                    <select name="Step2polis[rprogMaxDays]" <?if($model->rprogSrok!=2) echo 'style="display:none;"'?> id="input3" class="rprogMaxDays2 form-control" >
                         <option value="0"></option>
                         <option value="1" <?if($model->rprogMaxDays == 1&&$model->rprogSrok) echo 'selected'?>>30</option>
                         <option value="2" <?if($model->rprogMaxDays == 2&&$model->rprogSrok) echo 'selected'?>>60</option>
                         <option value="3" <?if($model->rprogMaxDays == 3&&$model->rprogSrok) echo 'selected'?>>90</option>
                     </select>
-                    <select name="Step2polis[rprogMaxDays]" <?if(!$model->rprogSrok) echo 'disabled';elseif($model->rprogSrok!=3) echo 'style="display:none;"'?> id="input3" class="rprogMaxDays3 form-control" >
+                    <select name="Step2polis[rprogMaxDays]" <?if($model->rprogSrok!=3) echo 'style="display:none;"'?> id="input3" class="rprogMaxDays3 form-control" >
                         <option value="0"></option>
                         <option value="1" <?if($model->rprogMaxDays == 1&&$model->rprogSrok) echo 'selected'?>>30</option>
                         <option value="2" <?if($model->rprogMaxDays == 2&&$model->rprogSrok) echo 'selected'?>>60</option>

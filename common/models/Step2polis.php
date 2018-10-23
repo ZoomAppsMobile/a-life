@@ -14,7 +14,7 @@ class Step2polis extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipe_lica', 'insuranceProgramm', 'rprogSrok', 'rprogMaxDays', 'beginDate', 'endDate', 'country1', 'country2', 'country3'], 'required'],
+            [['tipe_lica', 'insuranceProgramm', 'beginDate', 'endDate', 'country1', 'country2', 'country3'], 'required'],
             [['mst_id', 'tipe_lica', 'insuranceProgramm', 'rprogSrok', 'rprogMaxDays', 'country1', 'country2', 'country3'], 'integer'],
         ];
     }
