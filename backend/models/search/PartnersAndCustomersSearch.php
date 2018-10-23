@@ -19,7 +19,7 @@ class PartnersAndCustomersSearch extends PartnersAndCustomers
     {
         return [
             [['id', 'status'], 'integer'],
-            [['title', 'title_en', 'title_kz', 'text', 'text_en', 'text_kz', 'doc', 'doc_en', 'doc_kz', 'keywords', 'description', 'url'], 'safe'],
+            [['title', 'title_en', 'title_kz', 'text', 'text_en', 'text_kz', 'doc', 'doc_en', 'doc_kz', 'keywords', 'description', 'url', 'type'], 'safe'],
         ];
     }
 

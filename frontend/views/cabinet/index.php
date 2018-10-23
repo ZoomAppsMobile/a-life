@@ -77,6 +77,7 @@
             </div>
 
             <button id="btn-quest"><?=Yii::t('main-title', 'Задать вопрос:')?></button>
+            <button id="btn-quest" onclick="location.href = '/clientsupport';"><?=Yii::t('main-title', 'Клиентская поддержка')?></button>
         </div>
 
         <div class="block2">
@@ -101,7 +102,7 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="tab-row1 d-flex justify-content-between">
-                            <a class="block1-link" href="#"><?=Yii::t('main-title', 'Продлить договор')?></a>
+<!--                            <a class="block1-link" href="#">--><?//=Yii::t('main-title', 'Продлить договор')?><!--</a>-->
                             <a class="block1-link" href="#" data-toggle="modal" data-target="#exampleModal2"><?=Yii::t('main-title', 'Оформить договор')?></a>
                         </div>
                         <div class="tab-row2">

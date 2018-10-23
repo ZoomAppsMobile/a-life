@@ -5,31 +5,47 @@
     <p><?=Yii::t('main-title', 'Партнеры и клиенты')?></p>
 </div>
 
-<div class="main-text mt-1 mt-md-5 mb-4 d-flex flex-md-row flex-column justify-content-between align-items-center">
-    <h3 class="text-uppercase text-md-left text-center"><?=Yii::t('main-title', 'партнеры и клиенты')?></h3>
+<div class="main-text mt-1 mt-md-4 d-flex flex-md-row flex-column justify-content-between align-items-center">
+    <h3 class="text-uppercase text-md-left text-center">клиенты</h3>
+</div>
+
+
+<div class="main-body d-flex flex-column">
+    <? foreach($klients as $k => $v){ ?>
+
+    <?if($k == 0){?>
+    <div class="second-row d-flex flex-md-row flex-column mt-md-4 mt-0 justify-content-between">
+        <?}elseif($k % 5 == 0){?>
+    </div>
+    <div class="second-row d-flex flex-md-row flex-column mt-md-3 mt-0 justify-content-between">
+        <?}?>
+
+        <div class="item-inside2 text-center">
+            <img src="<?=$v->setLang('doc');?>" alt="" style="height:4rem;">
+        </div>
+
+    <?}?>
+    </div>
+</div>
+
+<div class="main-text mt-1 mt-md-4 d-flex flex-md-row flex-column justify-content-between align-items-center">
+    <h3 class="text-uppercase text-md-left text-center">партнеры</h3>
 </div>
 
 <div class="main-body d-flex flex-column">
-        <? $i = 0; foreach($model as $v){ ?>
-        <? if($i == 0){ ?>
-            <div class="d-flex flex-md-row flex-column justify-content-between">
-        <? }if($i != 0 && $i % 4 == 0){ ?>
-                <div class="second-row d-flex flex-md-row flex-column mt-md-4 mt-0 justify-content-between">
-        <? } ?>
+    <? foreach($partners as $k => $v){ ?>
 
-        <div class="item-inside d-flex flex-column align-items-center">
-            <img src="<?php
-                            echo $v->setLang('doc');
-                       ?>
-                       " alt="">
-            <p class="text-center">
-                <?php
-                    echo $v->setLang('title');
-                ?>
-            </p>
-            <a href="<?=\yii\helpers\Url::to(['/about-company/partners-and-customers/'.$v['url']]);?>"><?=Yii::t('main-title', 'Читать больше')?></a>
+        <?if($k == 0){?>
+            <div class="second-row d-flex flex-md-row flex-column mt-md-4 mt-0 justify-content-between">
+        <?}elseif($k % 4 == 0){?>
+            </div>
+            <div class="second-row d-flex flex-md-row flex-column mt-md-4 mt-0 justify-content-between">
+        <?}?>
+                <div class="item-inside text-center">
+                    <img src="<?=$v->setLang('doc');?>" alt="">
+                </div>
+    <?}?>
         </div>
-
-        <? $i++;if($i % 4 == 0 || $i == count($model)){ ?></div><? } ?>
-        <? } ?>
 </div>
+
+<?//=\yii\helpers\Url::to(['/about-company/partners-and-customers/'.$v['url']]);?>

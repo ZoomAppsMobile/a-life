@@ -25,24 +25,28 @@ class MenuController extends FrontendController
     /// О компании
     public function actionAboutTheCompany(){
         $model = Menu::findOne(['url' => 'about-company']);
-        $meta = Menu::findOne(['url' => 'about-company']);
 
-        $this->setMeta($meta);
+        $this->setMeta($model);
 
         return $this->render('about-the-company', compact('model'));
     }
 
     public function actionAboutTheCompanyChild($url){
+        $klients = '';
+        $partners = '';
+        $model = '';
         if($url=="documents-and-publications")
             $model = Document::find()->all();
-        elseif($url=="partners-and-customers")
-            $model = PartnersAndCustomers::find()->all();
+        elseif($url=="partners-and-customers") {
+            $partners = PartnersAndCustomers::find()->where('type = 0')->all();
+            $klients = PartnersAndCustomers::find()->where('type = 1')->all();
+        }
         else
             throw new HttpException(404 ,'Not found');
         $array = Metatags::find()->where('url = "'.$url.'"')->one();
         $this->setMeta($array);
 
-        return $this->render("about-the-company/$url", compact('model'));
+        return $this->render("about-the-company/$url", compact('model', 'klients', 'partners'));
     }
 
     public function actionAboutTheCompanyChildChild($url, $url1){

@@ -6892,4 +6892,16 @@ body {
     display: block;
   }
 }
+.mt-5, .my-5 {
+   margin-top: 3rem !important;
+}
+.list-item {
+  margin: 1rem 0;
+}
+.list-link, .list-link:hover {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+  color: #a00b52;
+  font-family: 'Pragmatica', sans-serif;
+}
 /*# sourceMappingURL=style.css.map */

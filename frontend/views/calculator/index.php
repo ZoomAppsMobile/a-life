@@ -29,16 +29,25 @@
     </div>
 
     <div class="d-flex flex-md-row flex-column align-items-center mt-md-4 mt-0 w-100">
-<!--        <a data-aos="fade-up" href="#" class="calculator d-flex flex-column mt-3 mt-md-0 justify-content-between align-items-center">-->
-<!--            <div class="d-flex flex-column align-items-center">-->
-<!--                <img src="/image/calculators-4.png" alt="">-->
-<!--                <h4 class="text-uppercase text-center">--><?//=Yii::t('main-title', 'Азия Корғау')?><!--</h4>-->
-<!--                <p class="text-center">--><?//=Yii::t('main-title', 'Ваша надежная страховая защита на случай непредвиденных ситуаций')?><!--</p>-->
-<!---->
-<!--            </div>-->
-<!--            <button class="text-uppercase">--><?//=Yii::t('main-title', 'рассчитать')?><!--</button>-->
-<!--        </a>-->
-        <a data-aos="fade-up" href="/calculator/mst" class="calculator d-flex flex-column mt-3 mt-md-0 justify-content-between align-items-center">
+        <a data-aos="fade-up" href="/calculator/bolashak" class="calculator d-flex flex-column ml-4 mt-3 mt-md-0 justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-center">
+                <img src="/image/calculators-1.png" alt="">
+                <h4 class="text-uppercase text-center"><?=Yii::t('main-title', 'АЗИЯ БОЛАШАҚ')?></h4>
+                <p class="text-center"><?=Yii::t('main-title', 'Программа для умных родителей.')?></p>
+
+            </div>
+            <button class="text-uppercase"><?=Yii::t('main-title', 'рассчитать')?></button>
+        </a>
+        <a data-aos="fade-up" href="/calculator/kazina" class="calculator d-flex flex-column ml-4 mt-3 mt-md-0 justify-content-between align-items-center">
+            <div class="d-flex flex-column align-items-center">
+                <img src="/image/calculators-2.png" alt="">
+                <h4 class="text-uppercase text-center"><?=Yii::t('main-title', 'АЗИЯ ҚАЗЫНА')?></h4>
+                <p class="text-center"><?=Yii::t('main-title', 'Программа «Азия Қазына».')?></p>
+
+            </div>
+            <button class="text-uppercase"><?=Yii::t('main-title', 'рассчитать')?></button>
+        </a>
+        <a data-aos="fade-up" href="/calculator/mst" class="calculator d-flex flex-column ml-4 mt-3 mt-md-0 justify-content-between align-items-center">
             <div class="d-flex flex-column align-items-center">
                 <img src="/image/calculators-5.png" alt="">
                 <h4 class="text-uppercase text-center"><?=Yii::t('main-title', 'Медицинское страхование туристов')?></h4>

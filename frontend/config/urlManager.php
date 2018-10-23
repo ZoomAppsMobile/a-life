@@ -49,6 +49,7 @@ return [
         'special-offers' => 'menu/special-offers',
 
         'calculator' => 'calculator',
+        'calculator/online' => 'calculator/online',
         'calculator/kazina-response' => 'calculator/kazina-response',
         'calculator/osrns-response' => 'calculator/osrns-response',
         'calculator/bolashak-response' => 'calculator/bolashak-response',

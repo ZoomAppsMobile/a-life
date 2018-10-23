@@ -34,6 +34,7 @@ $banner=Banner::find()
 </head>
 <body>
     <?php $this->beginBody() ?>
+<!--    --><?//=$this->render('_header');?>
     <div class="header1 d-none d-md-flex justify-content-between">
     <a href="/"><img class="logo" src="/image/logo.png" alt=""></a>
     <div class="d-flex flex-column">

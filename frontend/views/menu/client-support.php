@@ -24,7 +24,7 @@ $this->registerCssFile('/frontend/web/css/clientsupport/style.css');
             <div class="client-item1">
                 <h4 class="client-item-txt mt-5"><?=Yii::t('main-title', '1. сообщите о событии любым доступным способом')?>:</h4>
                 <p class="client-txt1 mt-4"><?=Yii::t('main-title', 'по')?> e-mail: <a href="mailto: info@asia-life.kz">info@asia-life.kz</a></p>
-                <p class="client-txt1"><?=Yii::t('main-title', 'по телефону')?>: <a href="tel: +7 (771) 228 06 07">+7 (771) 228 06 07</a></p>
+                <p class="client-txt1"><?=Yii::t('main-title', 'по телефону')?>: <a href="https://wa.me/77712280607" target="_blank">+7 (771) 228 06 07</a></p>
                 <p class="personal-cabinet"><a href="#"><?=Yii::t('main-title', 'В личном кабинете')?></a></p>
             </div>
 

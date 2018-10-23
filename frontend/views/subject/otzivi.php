@@ -1,10 +1,11 @@
 <link href="/css1/main.css" rel="stylesheet">
-<div class="link-anchors d-flex flex-md-row flex-column mt-4">
-    <a href="/"><?=Yii::t('main-title', 'Главная')?> <img src="/image/link-arrow-right.png" alt=""></a>
-    <p><?=Yii::t('main-title', 'Отзывы')?></p>
-</div>
 <div class="wrapper">
     <div class="main">
+        <div class="main__nav">
+            <a class="main__nav__link" href="/"><?=Yii::t('main-title', 'Главная')?></a>
+            <img src="/img/nav.png" alt="nav">
+            <a class="main__nav__link reviews" href=""><?=Yii::t('main-title', 'Отзывы')?></a>
+        </div>
         <style>
             .message{
                 text-align:left;

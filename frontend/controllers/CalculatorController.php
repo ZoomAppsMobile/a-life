@@ -24,6 +24,10 @@ class CalculatorController extends FrontendController
         return $this->render('index');
     }
 
+    public function actionOnline(){
+        return $this->render('online');
+    }
+
     public function actionChild($url){
 
         return $this->render($url);

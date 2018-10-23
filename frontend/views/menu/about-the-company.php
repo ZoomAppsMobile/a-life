@@ -61,6 +61,14 @@
     </div>
 </div>
 <div class="rules d-flex flex-column">
-    <a href="/about-company/documents-and-publications"><?=Yii::t('main-title', 'Документы и публикации')?></a>
-    <a href="/about-company/partners-and-customers"><?=Yii::t('main-title', 'Партнеры и клиенты')?></a>
+    <div class="list">
+        <div class="list-item">
+            <img src="/images/list.png" alt="">
+            <a href="/about-company/documents-and-publications" class="list-link"><?=Yii::t('main-title', 'Документы и публикации')?></a>
+        </div>
+        <div class="list-item">
+            <img src="/images/list.png" alt="">
+            <a href="/about-company/partners-and-customers" class="list-link"><?=Yii::t('main-title', 'Партнеры и клиенты')?></a>
+        </div>
+    </div>
 </div>

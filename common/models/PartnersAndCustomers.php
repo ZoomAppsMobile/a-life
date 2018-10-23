@@ -39,7 +39,7 @@ class PartnersAndCustomers extends \common\models\CommonModel
     {
         return [
             [['text', 'text_en', 'text_kz'], 'string'],
-            [['status'], 'integer'],
+            [['status', 'type'], 'integer'],
             [['title', 'title_en', 'title_kz', 'doc', 'doc_en', 'doc_kz', 'keywords', 'description', 'url'], 'string', 'max' => 255],
             [['url'], 'unique'],
         ];
