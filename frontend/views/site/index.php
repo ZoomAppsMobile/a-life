@@ -87,7 +87,7 @@
         </div>
         <div class="item-inside  align-items-center d-flex">
             <img src="/image/products-item7.png" alt="">
-            <h4 class="text-uppercase"><a href="/calculator/oneline" style="color:#9f074f;"><?=Yii::t('main-label', 'Оформление договора страхования онлайн');?></a></h4>
+            <h4 class="text-uppercase"><a href="/calculator/online" style="color:#9f074f;"><?=Yii::t('main-label', 'Оформление договора страхования онлайн');?></a></h4>
         </div>
     </div>
 </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="item-inside  align-items-center justify-content-center d-flex">
                 <img src="/image/products-item7.png" alt="">
-                <h4 class="text-uppercase"><a href="/calculator/oneline" style="color:#9f074f;"><?=Yii::t('main-label', 'Оформление договора страхования онлайн');?></a></h4>
+                <h4 class="text-uppercase"><a href="/calculator/online" style="color:#9f074f;"><?=Yii::t('main-label', 'Оформление договора страхования онлайн');?></a></h4>
             </div>
         </div>
     </div>
