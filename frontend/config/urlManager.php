@@ -50,6 +50,7 @@ return [
 
         'calculator' => 'calculator',
         'calculator/online' => 'calculator/online',
+        'calculator/mst/step3' => 'calculator/step3',
         'calculator/kazina-response' => 'calculator/kazina-response',
         'calculator/osrns-response' => 'calculator/osrns-response',
         'calculator/bolashak-response' => 'calculator/bolashak-response',

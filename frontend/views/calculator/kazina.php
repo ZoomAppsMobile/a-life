@@ -223,7 +223,7 @@
         <div style="color: red;padding-left: 20px;" class="errors"></div>
         <button class="text-uppercase sum-btn"><?=Yii::t('main-title', 'Рассчитать')?></button>
     </div>
-    <div style="text-align: right; color: #fff;">
-        <a class="text-uppercase sum-btn dalee" href="/calculator/kazina/step2"><?=Yii::t('main-title', 'Далее')?></a>
-    </div>
+<!--    <div style="text-align: right; color: #fff;">-->
+<!--        <a class="text-uppercase sum-btn dalee" href="/calculator/kazina/step2">--><?//=Yii::t('main-title', 'Далее')?><!--</a>-->
+<!--    </div>-->
 </form>

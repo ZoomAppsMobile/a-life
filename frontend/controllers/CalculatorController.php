@@ -9,6 +9,11 @@
 namespace frontend\controllers;
 
 use common\models\Countries;
+use common\models\Step2kontDannieStr;
+use common\models\Step2kontDannieZas;
+use common\models\Step2polis;
+use common\models\Step2strahovatel;
+use common\models\Step2zastrahovanniy;
 use frontend\models\Bolashak;
 use frontend\models\Kazina;
 use frontend\models\Mst;
@@ -24,13 +29,9 @@ class CalculatorController extends FrontendController
         return $this->render('index');
     }
 
-    public function actionOnline(){
-        return $this->render('online');
-    }
+    public function actionChild($url, $error = ''){
 
-    public function actionChild($url){
-
-        return $this->render($url);
+        return $this->render($url, ['error' => $error]);
     }
 
     public function actionBolashakResponse()
@@ -438,29 +439,100 @@ class CalculatorController extends FrontendController
     {
         $session = Yii::$app->session;
 
-        $model =  'frontend\\models\\'.ucfirst($url);
-        $model = $model::findOne($session->get($url));
+        $step2kont_dannie_str = new Step2kontDannieStr;
+        $step2kont_dannie_zas = new Step2kontDannieZas;
+        $model = new Step2polis;
+        $step2strahovatel = new Step2strahovatel;
+        $step2zastrahovanniy = new Step2zastrahovanniy;
 
-        $step2 = new Step2Form;
+        if($session->get($url)&&!$_POST){
+            $model_old_step = 'frontend\\models\\' . ucfirst($url);
+            $model_old_step = $model_old_step::findOne($session->get($url));
 
-        if(isset($_GET['Step2Form']) && $step2->validate())
-        {
-            echo 1;die;
+//            $model = new Step2Form;
+
+//            if (isset($_GET['Step2Form']) && $step2->validate()) {
+//                echo 1;
+//                die;
+//            }
+
+            $model->attributes = $model_old_step->attributes;
+
+            $country = Countries::find()->orderBy('name')->all();
+
+            return $this->render('step2_new', compact('model', 'country', 'model_old_step',
+                'step2kont_dannie_str', 'step2kont_dannie_zas', 'step2strahovatel', 'step2zastrahovanniy'));
+        }elseif($_POST){
+            $step2kont_dannie_str->load(Yii::$app->request->post());
+            $step2kont_dannie_zas->load(Yii::$app->request->post());
+            $model->load(Yii::$app->request->post());
+            $step2strahovatel->load(Yii::$app->request->post());
+            $step2zastrahovanniy->load(Yii::$app->request->post());
+
+            if($model->validate() && $step2strahovatel->validate() && $step2kont_dannie_str->validate()
+                && $step2zastrahovanniy->validate() && $step2kont_dannie_zas->validate()){
+
+                $step2kont_dannie_zas->data_vidachi = strtotime($step2kont_dannie_zas->data_vidachi);
+                $model->beginDate = strtotime($model->beginDate);
+                $model->endDate = strtotime($model->endDate);
+
+                $model->mst_id = $session->get('mst');
+                $model->save();
+
+                $step2strahovatel->mst_id = $session->get('mst');
+                $step2strahovatel->save();
+
+                $step2kont_dannie_str->mst_id = $session->get('mst');
+                $step2kont_dannie_str->save();
+
+                $step2zastrahovanniy->mst_id = $session->get('mst');
+                $step2zastrahovanniy->save();
+
+                $step2kont_dannie_zas->mst_id = $session->get('mst');
+                $step2kont_dannie_zas->save();
+
+                return $this->redirect('step3');
+
+            }else{
+                if($session->get($url)){
+                    $model_old_step = 'frontend\\models\\' . ucfirst($url);
+                    $model_old_step = $model_old_step::findOne($session->get($url));
+
+                    $model->attributes = $model_old_step->attributes;
+
+                    $country = Countries::find()->orderBy('name')->all();
+
+                    return $this->render('step2_new', compact('model', 'country', 'model_old_step',
+                        'step2kont_dannie_str', 'step2kont_dannie_zas', 'step2strahovatel', 'step2zastrahovanniy'));
+                }else{
+                    return $this->actionChild($url, $error = 'Рассчитайте полис!');
+                }
+            }
+
+        }else{
+            return $this->actionChild($url, $error = 'Рассчитайте полис!');
         }
-
-        return $this->render('step2'.$url, compact('model'));
     }
 
-
-    public function actionStep3($url)
+    public function actionStep3()
     {
+//        $session = Yii::$app->session;
+//
+//        $model =  'frontend\\models\\'.ucfirst($url);
+//        $model = $model::findOne($session->get($url));
+
         $session = Yii::$app->session;
 
-        $model =  'frontend\\models\\'.ucfirst($url);
-        $model = $model::findOne($session->get($url));
+        $mst = Mst::findOne($session->get('mst'));
+        $step2kont_dannie_str = Step2kontDannieStr::find()->where(['mst_id' => $session->get('mst')])->one();
+        $step2kont_dannie_zas = Step2kontDannieZas::find()->where(['mst_id' => $session->get('mst')])->one();
+        $model = Step2polis::find()->where(['mst_id' => $session->get('mst')])->one();
+        $step2strahovatel = Step2strahovatel::find()->where(['mst_id' => $session->get('mst')])->one();
+        $step2zastrahovanniy = Step2zastrahovanniy::find()->where(['mst_id' => $session->get('mst')])->one();
+        $country = Countries::find()->where(['country_id' => $model->country1])->one();
 
-
-        return $this->render('step3'.$url, compact('model'));
+        return $this->render('step3', compact('model', 'country', 'step2kont_dannie_str',
+            'step2kont_dannie_zas', 'step2strahovatel', 'step2zastrahovanniy', 'mst'));
     }
 
     public function actionCountryType()

@@ -10,7 +10,8 @@
     <h3 class="text-uppercase text-md-left text-center"><?=Yii::t('main-title', 'Шаг 1. Расчет стоимости полиса')?></h3>
     <a href=""><?=Yii::t('main-title', 'Как оформить полис')?></a>
 </div>
-
+<div class="main-text mt-1 mt-md-5 mb-4 d-flex flex-md-row flex-column justify-content-between align-items-center">
+<div class="error" style="color:red;"><?=$error?></div>
 <form action="" class="form-asia d-flex flex-column mst-response">
     <div class="first-row d-flex flex-md-row flex-column justify-content-between mb-4">
         <div class="d-flex flex-column">
