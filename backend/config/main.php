@@ -43,14 +43,14 @@ return [
         ],
     ],
     'components' => [ 
-        'i18n' => [
-            'translations' => [
-                'app' => [
-                    'class' => 'yii\i18n\DbMessageSource', 
-					'sourceLanguage' => 'en',
-                ],
-            ],
-        ],
+//        'i18n' => [
+//            'translations' => [
+//                'app' => [
+//                    'class' => 'yii\i18n\DbMessageSource',
+//					'sourceLanguage' => 'en',
+//                ],
+//            ],
+//        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
