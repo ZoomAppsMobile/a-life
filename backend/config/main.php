@@ -42,15 +42,7 @@ return [
             ],
         ],
     ],
-    'components' => [ 
-//        'i18n' => [
-//            'translations' => [
-//                'app' => [
-//                    'class' => 'yii\i18n\DbMessageSource',
-//					'sourceLanguage' => 'en',
-//                ],
-//            ],
-//        ],
+    'components' => [
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
