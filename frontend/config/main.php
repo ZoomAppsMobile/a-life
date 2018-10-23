@@ -14,6 +14,17 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'main-*' => [
+                    'class'                 => yii\i18n\DbMessageSource::class,
+                    'sourceLanguage'        => 'ru',
+                    'forceTranslation'      => false,
+                    'enableCaching'         => true,
+                    'cachingDuration'       => 60,
+                ],
+            ],
+        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
