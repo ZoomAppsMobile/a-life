@@ -198,6 +198,6 @@
         </label>
     </div>
 
-    <div class="calc-button">перейсти к оплате</div>
+    <div class="calc-button">Перейти к оплате</div>
 </div>
 
