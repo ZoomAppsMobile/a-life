@@ -28,7 +28,7 @@ $this->registerCssFile('/frontend/web/css/ob_st_sotr/style.css');
             echo $blog->setLang('title');
         ?></h3>
     <div data-aos="fade-up" class="photo-and-information d-flex flex-md-row flex-column">
-        <img class="main-pic" src="<?=$blog->image?>" alt="" style="width:40rem;">
+        <img class="main-pic" src="<?=$blog->image?>" alt="" style="width:40rem;height:40rem;">
         <div class="space-between"></div>
         <div class="ml-3 d-flex flex-column p-4">
             <?
