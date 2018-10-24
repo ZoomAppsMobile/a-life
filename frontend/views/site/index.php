@@ -43,7 +43,7 @@
     <h3 data-aos="fade-up" class="text-uppercase text-center mb-3"><?php
         echo Yii::t('main-label', 'СТРАХОВЫЕ ПРОДУКТЫ');
         ?></h3>
-    <a href="/<?$banner1->url?>">
+    <a href="/<?=$banner1['url']?>">
         <div data-aos="fade-up" class="item1 mb-2">
             <h4 class="text-uppercase text-center"><?php
                 echo $banner1->setLang('title');
@@ -52,7 +52,7 @@
                     ?></span></h4>
         </div>
     </a>
-    <a href="/<?$banner2->url?>">
+    <a href="/<?=$banner2->url?>">
         <div data-aos="fade-up" class="item2 mb-2">
             <h4 class="text-uppercase text-center"><?php
                 echo $banner2->setLang('title');
@@ -61,7 +61,7 @@
                     ?></span></h4>
         </div>
     </a>
-    <a data-aos="fade-up" class="item3 mb-2 d-flex align-items-center justify-content-end pr-4" href="/<?$banner4->url?>">
+    <a data-aos="fade-up" class="item3 mb-2 d-flex align-items-center justify-content-end pr-4" href="/<?=$banner4->url?>">
         <h4 class="text-uppercase text-center"><?php
             echo $banner4->setLang('title');
             ?>
@@ -69,7 +69,7 @@
                 echo $banner4->setLang('description');
                 ?></span></h4>
     </a>
-    <a data-aos="fade-up" class="item4 mb-2" href="/<?$banner3->url?>">
+    <a data-aos="fade-up" class="item4 mb-2" href="/<?=$banner3->url?>">
         <h4 class="text-uppercase text-center"><?php
             echo $banner3->setLang('title');
             ?><br><span><?php
@@ -100,7 +100,7 @@
         <div class="d-flex product-main-block">
             <div class="d-flex flex-column">
                 <div class="d-flex product-blocks">
-                    <a href="/<?$banner1->url?>">
+                    <a href="/<?=$banner1->url?>">
                         <div data-aos="fade-right" class="item1" style="background-image: url(<?=$banner1->image?>)">
                             <h4 class="text-uppercase text-center"><?php
                                 echo $banner1->setLang('title');
@@ -109,7 +109,7 @@
                                     ?></span></h4>
                         </div>
                     </a>
-                    <a href="/<?$banner2->url?>">
+                    <a href="/<?=$banner2->url?>">
                         <div data-aos="fade-right" class="item2" style="background-image: url(<?=$banner2->image?>);background-position: 100% 50%;">
                             <h4 class="text-uppercase text-center"><?php
                                 echo $banner2->setLang('title');
@@ -119,7 +119,7 @@
                         </div>
                     </a>
                 </div>
-                <a href="/<?$banner4->url?>">
+                <a href="/<?=$banner4->url?>">
                     <div data-aos="fade-up" class="item3 d-flex align-items-center justify-content-end pr-4" style="background-image: url(<?=$banner4->image?>)">
                         <h4 class="text-uppercase text-center"><?php
                             echo $banner4->setLang('title');
@@ -130,7 +130,7 @@
                     </div>
                 </a>
             </div>
-            <a data-aos="fade-left" class="item4" href="/<?$banner3->url?>" style="background-image: url(<?=$banner3->image?>);background-position: 70% 50%;">
+            <a data-aos="fade-left" class="item4" href="/<?=$banner3->url?>" style="background-image: url(<?=$banner3->image?>);background-position: 70% 50%;">
                 <h4 class="text-uppercase text-center"><?php
                     echo $banner3->setLang('title');
                     ?>  <br><span><?php
@@ -166,11 +166,11 @@
 
                 $newtitle=$key->setLang('title');
                 $newdescription=$key->setLang('description');
-                echo '<div class="item"><img src="'.$key->image.'">
+                echo '<a href="/news/'.$key->url.'"><div class="item"><img src="'.$key->image.'">
                 <h4 class="text-uppercase mt-3">'.$newtitle.'</h4>
                 <p>'.$key->dating.'7</p>
                 <h6>'.$newdescription.'</h6>
-            </div>';
+                </div></a>';
             }
             ?>
 

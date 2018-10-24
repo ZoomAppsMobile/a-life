@@ -110,7 +110,7 @@
         </div>
         <div class="d-flex flex-column">
             <label for="input11"><?=Yii::t('main-title', 'Контактный телефон')?></label>
-            <input class="form-control" type="text" name="Mst[phone]" id="input11">
+            <input class="form-control" type="text" name="Mst[phone]" id="input11" data-mask="+700000000000">
         </div>
         <div class="d-flex flex-column">
             <label for="input12">E-mail</label>
@@ -137,7 +137,16 @@
         </div>
     </div>
 
-    <div class="fourth-row d-flex flex-md-row flex-column justify-content-between mb-4 p-3">
+    <div class="fifth-row d-flex flex-md-row flex-column justify-content-between align-items-center mb-4">
+        <p> *<?=Yii::t('main-title', 'Все поля обязательны для заполнения!')?></p>
+        <div style="color: red;padding-left: 20px;" class="errors"></div>
+    </div>
+
+    <div class="fifth-row d-flex flex-md-row flex-column justify-content-between align-items-center mb-4">
+        <button class="text-uppercase" style="margin:0 auto;"><?=Yii::t('main-title', 'Рассчитать Стоимость')?></button>
+    </div>
+
+    <div class="fourth-row d-flex flex-md-row flex-column justify-content-between mb-4 p-3 result_mst" style="display: none !important;">
         <div class="last-dynamic d-flex flex-column">
             <label for="input14"><?=Yii::t('main-title', 'Страховая премия, тенге')?></label>
             <input class="form-control premKz" type="text" name="Mst[premKz]">
@@ -154,21 +163,18 @@
             <label for="input14"><?=Yii::t('main-title', 'Страховая премия, евро')?></label>
             <input class="form-control premEur" type="text" name="Mst[premEur]">
         </div>
-<!--        <div class="last-dynamic d-flex flex-column err_div" style="display:none;">-->
-<!--            <label for="input14">Ошибки</label>-->
-<!--            <input class="form-control err" type="text">-->
-<!--        </div>-->
+        <!--        <div class="last-dynamic d-flex flex-column err_div" style="display:none;">-->
+        <!--            <label for="input14">Ошибки</label>-->
+        <!--            <input class="form-control err" type="text">-->
+        <!--        </div>-->
     </div>
 
-
-    <div class="fifth-row d-flex flex-md-row flex-column justify-content-between align-items-center mb-4">
-        <p> *<?=Yii::t('main-title', 'Все поля обязательны для заполнения!')?></p>
-        <div style="color: red;padding-left: 20px;" class="errors"></div>
-<!--        <button class="text-uppercase">--><?//=Yii::t('main-title', 'Продолжить оформление')?><!--</button>-->
-        <button class="text-uppercase"><?=Yii::t('main-title', 'Рассчитать')?></button>
-    </div>
-    <div style="text-align: right; color: #fff;">
-        <a class="text-uppercase dalee" href="/calculator/mst/step2"><?=Yii::t('main-title', 'Далее')?></a>
+    <div style="text-align: right; color: #fff;padding:0;" class="form-asia">
+        <div class="fifth-row">
+        <button class="text-uppercase">
+            <a style="color:#fff;text-decoration: none;" class="text-uppercase dalee" href="/calculator/mst/step2"><?=Yii::t('main-title', 'Оформить сейчас')?></a>
+        </button>
+        </div>
     </div>
 </form>
 

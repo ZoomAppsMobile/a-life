@@ -28,7 +28,7 @@ $this->registerCssFile('/frontend/web/css/ob_st_sotr/style.css');
             echo $blog->setLang('title');
         ?></h3>
     <div data-aos="fade-up" class="photo-and-information d-flex flex-md-row flex-column">
-        <img class="main-pic" src="<?=$blog->image?>" alt="">
+        <img class="main-pic" src="<?=$blog->image?>" alt="" style="width:40rem;">
         <div class="space-between"></div>
         <div class="ml-3 d-flex flex-column p-4">
             <?
@@ -37,7 +37,7 @@ $this->registerCssFile('/frontend/web/css/ob_st_sotr/style.css');
                 foreach ($blogtags as $tagkey) {
                     $tagkeytitle=$tagkey->setLang('title');
                     if(isset($tagkey->file)){
-                        $tagkeyurl=$tagkey->setLang('title');
+                        $tagkeyurl=$tagkey->setLang('file');
                     }else{
                         $tagkeyurl=$tagkey->url;
                     }
@@ -329,7 +329,11 @@ $this->registerCssFile('/frontend/web/css/ob_st_sotr/style.css');
         </div>
     </div>
 <? } ?>
-
+<style>
+    .variant-item{
+        border-top: 2px solid #d9dde1;
+    }
+</style>
 <?if(!empty($blog->v_s_m_s)){?>
     <div data-aos="fade-up" class="your-profit d-flex flex-column my-4">
         <h3 data-aos="fade-up" class="text-uppercase my-3"><?=Yii::t('main-title', 'Варианты сумм страховой защиты в зависимости от территории')?><br>
@@ -553,7 +557,7 @@ $this->registerCssFile('/frontend/web/css/ob_st_sotr/style.css');
 <? } ?>
 
 <div data-aos="fade-up" class="button-with-text d-flex flex-column align-items-center my-5">
-    <button>оформить сейчас</button>
+    <button><a href="/calculator/bolashak">оформить сейчас</a></button>
     <p class="text-left w-100">
         <?php
             echo $blog->setLang('note');

@@ -46,6 +46,7 @@ class AppAsset extends AssetBundle
     ];
     public $js = [
         'libs/jquery/dist/jquery.min.js',
+        '/js/jquery.mask.js',
         'https://unpkg.com/popper.js/dist/umd/popper.min.js',
         'libs/bootstrap/dist/js/bootstrap.min.js',
         'https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.0/aos.js',

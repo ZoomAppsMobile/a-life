@@ -38,41 +38,51 @@ $this->registerCssFile('/frontend/web/css/clientsupport/style.css');
 
     <div data-aos="fade-up" class="client-main-block2 d-flex justify-content-between">
         <div class="client-card">
-            <div class="card-item1">
-                <img src="/images/card1.png" alt="">
-                <p class="card-title1"><a href="/clientsupport/action-insured-event"><?=Yii::t('main-title', 'Действия')?>
-                        <br><?=Yii::t('main-title', 'при наступлении')?>
-                        <br><?=Yii::t('main-title', 'страхового случая')?></a></p>
-            </div>
+            <a href="/clientsupport/action-insured-event">
+                <div class="card-item1">
+                    <img src="/images/card1.png" alt="">
+                    <p class="card-title1"><?=Yii::t('main-title', 'Действия')?>
+                            <br><?=Yii::t('main-title', 'при наступлении')?>
+                            <br><?=Yii::t('main-title', 'страхового случая')?></p>
+                </div>
+            </a>
         </div>
 
         <div class="client-card">
-            <div class="card-item">
-                <img src="/images/card2.png" alt="">
-                <p class="card-title"><a href="/clientsupport/statement"><?=Yii::t('main-title', 'Заявления')?></a></p>
-            </div>
+            <a href="/clientsupport/statement">
+                <div class="card-item">
+                    <img src="/images/card2.png" alt="">
+                    <p class="card-title"><?=Yii::t('main-title', 'Заявления')?></p>
+                </div>
+            </a>
         </div>
 
         <div class="client-card">
-            <div class="card-item">
-                <img src="/images/card3.png" alt="">
-                <p class="card-title"><a href="/clientsupport/faq"><?=Yii::t('main-title', 'Часто задаваемые')?>
-                        <br><?=Yii::t('main-title', 'вопросы')?></a></p>
-            </div>
+            <a href="/clientsupport/faq">
+                <div class="card-item">
+                    <img src="/images/card3.png" alt="">
+                    <p class="card-title"><?=Yii::t('main-title', 'Часто задаваемые')?>
+                            <br><?=Yii::t('main-title', 'вопросы')?></p>
+                </div>
+            </a>
         </div>
 
         <div class="client-card">
-            <div class="card-item">
-                <img src="/images/card4.png" alt="">
-                <p class="card-title"><a href="/terms"><?=Yii::t('main-title', 'Страховые термины')?></a></p>
-            </div>
+            <a href="/terms">
+                <div class="card-item">
+                    <img src="/images/card4.png" alt="">
+                    <p class="card-title"><?=Yii::t('main-title', 'Страховые термины')?></p>
+                </div>
+            </a>
         </div>
 
         <div class="client-card">
-            <div class="card-item">
-                <img src="/images/card5.png" alt="">
-                <p class="card-title"><a href="/clientsupport/useful-tips"><?=Yii::t('main-title', 'Полезные советы')?></a></p>
-            </div>
+            <a href="/clientsupport/useful-tips">
+                <div class="card-item">
+                    <img src="/images/card5.png" alt="">
+                    <p class="card-title"><?=Yii::t('main-title', 'Полезные советы')?></p>
+                </div>
+            </a>
         </div>
     </div>
 </div>

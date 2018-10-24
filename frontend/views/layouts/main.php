@@ -48,7 +48,7 @@ $banner=Banner::find()
 <!--                    --><?//=Yii::t('main-title', 'Заказать звонок');?>
 <!--                </button>-->
                 <a class="pink-text" data-toggle="modal" data-target="#exampleModal">
-                    <span>
+                    <span style="cursor:pointer;">
                         <?=Yii::t('main-title', 'Заказать звонок');?>
                     </span>
                 </a>
@@ -61,7 +61,7 @@ $banner=Banner::find()
                         ?></a>
                 </div>
                 <a class="pink-text" href="" id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span>
+                    <span style="cursor:pointer;">
                         <?php
                             echo Yii::t('main-title', 'офисы в вашем городе');
                         ?>
@@ -126,7 +126,11 @@ $banner=Banner::find()
                 </button>
             </div>
             <div class="modal-body">
-                <h3>Заказать звонок</h3>
+                <a class="pink-text" data-toggle="modal" data-target="#exampleModal">
+                    <span>
+                        <?=Yii::t('main-title', 'Заказать звонок');?>
+                    </span>
+                </a>
                 <div class="callback-error" style="color:red;"></div>
                 <form class="modal-form" action="">
                     <p>Введите номер телефона</p>

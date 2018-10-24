@@ -6,7 +6,7 @@
 </div>
 
 <div class="main-text mt-1 mt-md-5 mb-4 d-flex flex-md-row flex-column justify-content-between align-items-center">
-    <h3 class="text-uppercase text-md-left text-center"><?=Yii::t('main-title', 'Калькуляторы')?>Шаг 1. Рассчитать стоимость полиса</h3>
+    <h3 class="text-uppercase text-md-left text-center"><?=Yii::t('main-title', 'Шаг 1. Рассчитать стоимость полиса')?></h3>
     <a href=""><?=Yii::t('main-title', 'Важно')?></a>
 </div>
 
@@ -78,10 +78,6 @@
         <div class="last-dynamic">
             <label for="input14"><?=Yii::t('main-title', 'Страховая сумма, тенге')?></label>
             <input id="input-nums" class="form-control" type="number" name="Kazina[strSum]" value="">
-        </div>
-        <div class="last-dynamic dynamic2">
-            <label for="input14"><?=Yii::t('main-title', 'Страховой взнос, тенге')?></label>
-            <input id="input-nums" class="form-control number" type="number" name="Kazina[strVz]" value="">
         </div>
     </div>
     <p class="sometext"><?=Yii::t('main-title', 'Укажите страховую сумму или желаемую сумму взноса. По второму полю расчет будет произведен автоматически')?></p>
@@ -215,9 +211,9 @@
 
     <div class="fourth-row d-flex flex-md-row flex-column justify-content-between mb-4 p-3">
         <div class="dynamic-item d-flex">
-            <p class="dynamic-sum"><?=Yii::t('main-title', 'Сумма, тенге')?></p>
+            <p class="dynamic-sum"><?=Yii::t('main-title', 'Страховой взнос, тенге')?></p>
             <div class="last-dynamic dynamic3">
-                <p class="form-control">&nbsp;</p>
+                <input id="input-nums" class="form-control number" type="number" name="Kazina[strVz]" value="">
             </div>
         </div>
         <div style="color: red;padding-left: 20px;" class="errors"></div>

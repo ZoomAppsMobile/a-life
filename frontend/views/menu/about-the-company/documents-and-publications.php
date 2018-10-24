@@ -11,7 +11,44 @@
     <div class="main-img">
         <img class="big-image" src="/images/main-img.png" alt="">
     </div>
-
+    <style>
+        .document-link>a {
+            color: #ae4872 !important;
+            font-family: 'Pragmatica', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        .document-link {
+            margin: 1.4rem 0.5rem;
+        }
+        .document-item {
+            padding: 0.5rem 1rem;
+            width: 270px;
+            height: 90px;
+            border: 3px solid #d9dde1;
+            border-radius: 0.4rem;
+        }
+        .your-profit h3 {
+            font-family: 'pragmatica-cyrillic', sans-serif;
+            font-size: 1.5rem;
+            color: #9f074f;
+            font-weight: 100;
+        }
+    </style>
+    <div data-aos="fade-up" class="your-profit d-flex flex-column my-4">
+        <h3 data-aos="fade-up" class="text-uppercase my-3"><?=Yii::t('main-title', 'Документы')?>:</h3>
+        <div class="d-flex justify-content-between flex-md-row flex-column">
+            <? $i = 1;$docs = \common\models\Docs::find()->orderBy('sort')->all(); ?>
+            <?foreach($docs as $v){?>
+                <div class="document-item d-flex">
+                    <div class="img-block"><img class="document-img" src="/images/doc<?=$i?>.png" alt=""></div>
+                    <p class="document-link" <?if($i==3){echo "style='margin-top:8px;'";}?>>
+                        <a href="/backend/web/<?=$v->path.$v->file?>" style="font-size: 1.1rem;"><?=$v->setLang('title')?></a>
+                    </p>
+                </div>
+                <?$i++;}?>
+        </div>
+    </div>
     <div class="list mt-5">
         <div class="list-item">
             <img src="/images/list.png" alt="">

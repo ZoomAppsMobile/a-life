@@ -31,7 +31,7 @@
         </div>
         <div>
             <label for="input3"><?=Yii::t('main-title', 'Контактный телефон')?></label>
-            <input id="tel-control" class="form-control" type="tel" name="Osrns[phone]" value="">
+            <input id="tel-control" class="form-control" type="tel" name="Osrns[phone]" value="" data-mask="+700000000000">
         </div>
         <div>
             <label for="input4">E-mail</label>
@@ -76,7 +76,9 @@
     <div class="d-flex justify-content-between flex-md-row flex-column">
         <p class="sometext"><?=Yii::t('main-title', 'Укажите страховую сумму или желаемую сумму взноса. По второму полю расчет будет произведен автоматически')?></p>
         <div style="color: red;padding-left: 20px;" class="errors"></div>
-        <button class="text-uppercase sum-btn"><?=Yii::t('main-title', 'Рассчитать')?></button>
+    </div>
+    <div class="d-flex justify-content-between flex-md-row flex-column">
+        <button class="text-uppercase sum-btn" style="margin:0 auto;"><?=Yii::t('main-title', 'Рассчитать Стоимость')?></button>
     </div>
 <!--    <div style="text-align: right; color: #fff;">-->
 <!--        <a class="text-uppercase sum-btn dalee" href="/calculator/osrns/step2">--><?//=Yii::t('main-title', 'Далее')?><!--</a>-->
