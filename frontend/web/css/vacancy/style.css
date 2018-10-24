@@ -6506,6 +6506,12 @@ body {
       font-size: .9rem;
       width: 13rem;
       border-radius: 6px; }
+    .main-body .job-inside a:hover {
+	  transition: .3s ease-in-out;
+      background-color: #fff;
+      color: #9f074f;
+	  border: 1px solid #9f074f;
+	}
     .main-body .job-inside:nth-child(2) img {
       height: 100%;
       width: auto;

@@ -99,14 +99,10 @@ $( ".mst-response" ).on( "submit", function( event ) {
                 $('.sumStrahKz').val(response.sumStrahKz);
                 $('.premEur').val(response.premEur);
                 $('.errors').html('Готово!').css('color', 'green');
-                $('.result_mst').css('display', 'block !important');
             }else if(response.err){
                 $('.errors').html(response.err);
-                $('.result_mst').css('display', 'none !important');
-            }else {
+            }else
                 $('.errors').html(response);
-                $('.result_mst').css('display', 'none !important');
-            }
         },
         error: function(){
             alert('Ошибка');

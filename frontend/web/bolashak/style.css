@@ -6330,6 +6330,9 @@ img {
   -webkit-user-select: none;
   -ms-user-select: none; }
 
+.your-profit .flip-container {
+	width: 100% !important;
+
 @media (max-width: 1680px) {
   * {
     font-size: 15px; } }
@@ -6531,7 +6534,7 @@ body {
   .your-profit .flip-container {
     z-index: 1;
     perspective: 1000px;
-    width: 16%;
+    width: 100%;
     margin-right: 1rem; }
     @media (max-width: 768px) {
       .your-profit .flip-container {
@@ -6759,6 +6762,12 @@ body {
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 1.5rem; }
+	.button-with-text button:hover{
+	  transition: .3s ease-in-out !important;
+	  background-color: #fff !important;
+	  color: #9f074f !important;
+	  border: 1px solid #9f074f !important;
+	}
   .button-with-text p {
     font-size: .8rem;
     font-family: 'PragmaticaLight', sans-serif; }
