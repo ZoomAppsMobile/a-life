@@ -93,6 +93,7 @@ $( ".mst-response" ).on( "submit", function( event ) {
         cache: false,
         success: function(response){
             if(response.premKz) {
+                $('.result_mst').show();
                 $('.response').show();
                 $('.premKz').val(response.premKz);
                 $('.kurs').val(response.kurs);
